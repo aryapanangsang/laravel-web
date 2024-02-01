@@ -1,16 +1,16 @@
-<div class="container mt-5 p-3 shadow-sm">
-    <ul class="nav nav-pills nav-fill">
+<div class="container mt-5 p-3 shadow rounded bg-white ">
+    <ul class="nav nav-pills nav-fill text-danger">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Active</a>
+            <a class="nav-link active bg-black" aria-current="page" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Much longer nav link</a>
+            <a class="nav-link text-black" href="#">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link text-black" href="#">Tracking CV</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link text-black">Lowongan</a>
         </li>
     </ul>
 </div>
