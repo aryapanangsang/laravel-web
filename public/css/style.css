@@ -1,6 +1,7 @@
 *{
-    margin: 0%;
-    padding: 0%;    
+    margin: 0;
+    padding: 0;    
+    box-sizing: border-box;
 }
 
 .jumbotron{    
@@ -13,6 +14,30 @@
     width: 100%;
 }
 
+/* Navbar */
+
+.navbar .nav-image{
+  display: none;
+}
+
+.navbar .list-menu ul{
+  list-style: none;  
+  margin-left: -30px;
+}
+
+.navbar .list-menu li{
+  padding:  4px 0;
+}
+
+.navbar .list-menu ul li a{
+  text-decoration: none;
+  color: slategray;
+}
+
+.navbar .list-menu ul li a:hover{
+  text-decoration: underline;  
+}
+
 /* Menu */
 
 .menu{
@@ -20,6 +45,7 @@
     display: flex;
     justify-content: center;  
     padding: 15px;
+    display: none;
 }
 
 .item-menu{    
@@ -35,173 +61,157 @@
     margin: 0 4px;
 }
 
+/* Tabel Identitas */
+
+.home-informations .image{
+  display: flex;
+  justify-content: center;  
+  margin-bottom: 10px;
+}
+
+.home-informations .image img{
+  margin-bottom: 3px;
+}
+
+.home-informations .list-identity{  
+  padding: 4px;
+  border-radius: 15px;
+}
+
+.home-informations .list-identity .name h2{
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.home-informations .identity{
+  border: 2px solid gainsboro;
+  border-radius: 15px;
+  padding: 20px
+}
+
+.list-identity .identity .label h6{  
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.list-identity .identity .fill{  
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: slategray;
+}
+
+.home-informations .status{
+  border: 2px solid gainsboro;
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+.home-informations .status-apply{
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+
+
+
 /* Tracking View */
-#tracking{
-    background: #fff
- }
- .tracking-detail {
-   padding: 3rem 0;
- }
- #tracking {
-   margin-bottom: 1rem;
- }
- [class*="tracking-status-"] p {
-   margin: 0;
-   font-size: 1.1rem;
-   color: #fff;
-   text-transform: uppercase;
-   text-align: center;
- }
- [class*="tracking-status-"] {
-   padding: 1.6rem 0;
- }
- .tracking-list {
-   border: 1px solid #e5e5e5;
- }
- .tracking-item {
-   border-left: 4px solid black;
-   position: relative;
-   padding: 2rem 1.5rem 0.5rem 2.5rem;
-   font-size: 0.9rem;
-   margin-left: 3rem;
-   min-height: 5rem;
- }
- /* Line */
- .tracking-item:last-child {
-   padding-bottom: 2rem;
- }
- .tracking-item .tracking-date {
-   margin-bottom: 0.5rem;
- }
- .tracking-item .tracking-date span {
-   color: #888;
-   font-size: 85%;
-   padding-left: 0.4rem;
- }
- .tracking-item .tracking-content {
-   padding: 0.5rem 0.8rem;
-   background-color: #f4f4f4;
-   border-radius: 0.5rem;
- }
- .tracking-item .tracking-content span {
-   display: block;
-   color: #767676;
-   font-size: 13px;
- }
- .tracking-item .tracking-icon {
-   position: absolute;
-   left: -0.7rem;
-   width: 1.1rem;
-   height: 1.1rem;
-   text-align: center;
-   border-radius: 50%;
-   font-size: 1.1rem;
-   background-color: #fff;
-   color: #fff;
- }
+.tracking ul{
+  list-style: none;
+  position: relative;
+}
+
+.tracking ul::after{
+  content: '';
+  width: 3px;
+  position: absolute;
+  height: calc(100% - 60px);
+  background-color: black;
+  left: 15px;  
+  top: 0;    
+  margin-top: 29px;
+}
+
+.tracking ul li{
+  padding: 30px 0;
+  padding-left: 20px;
+}
+
+.tracking ul li a{
+  text-decoration: none;
+  color: black;
+  position: relative;  
+}
+
+.tracking ul li a::before{
+  content:'';
+  position: absolute;
+  width:25px;
+  height:25px;
+  background: white;
+  border-radius: 100%;
+  left: -48px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 4px solid black;
+  z-index: 10;
+}
+
+.tracking ul li a.active::before{
+  background: black;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) { 
   
- .tracking-item-pending {
-   border-left: 4px solid #d6d6d6;
-   position: relative;
-   padding: 2rem 1.5rem 0.5rem 2.5rem;
-   font-size: 0.9rem;
-   margin-left: 3rem;
-   min-height: 5rem;
- }
- .tracking-item-pending:last-child {
-   padding-bottom: 4rem;
- }
- .tracking-item-pending .tracking-date {
-   margin-bottom: 0.5rem;
- }
- .tracking-item-pending .tracking-date span {
-   color: #888;
-   font-size: 85%;
-   padding-left: 0.4rem;
- }
- .tracking-item-pending .tracking-content {
-   padding: 0.5rem 0.8rem;
-   background-color: #f4f4f4;
-   border-radius: 0.5rem;
- }
- .tracking-item-pending .tracking-content span {
-   display: block;
-   color: #767676;
-   font-size: 13px;
- }
- .tracking-item-pending .tracking-icon {
-   line-height: 2.6rem;
-   position: absolute;
-   left: -0.7rem;
-   width: 1.1rem;
-   height: 1.1rem;
-   text-align: center;
-   border-radius: 50%;
-   font-size: 1.1rem;
-   color: #d6d6d6;
- }
- .tracking-item-pending .tracking-content {
-   font-weight: 600;
-   font-size: 17px;
- }
+  /* Navbar */
+  .list-menu{
+    display: none;
+  }
+
+  .navbar .nav-image{
+    display: block;
+  }
+
+  /* Menu */
+  .menu{
+    display: block;
+  }
+
+
   
- .tracking-item .tracking-icon.status-current {
-   width: 1.9rem;
-   height: 1.9rem;
-   left: -1.1rem;
+  /* Identity */
+  .home-informations .image{      
+    margin-bottom: 0;
+  }
+
+  .home-informations .list-identity .name h2{    
+    text-align: left;
+  }
+
+  .home-informations .identity{
+    border: none;
+    padding: unset;
+  }
+
+  .home-informations .status{
+    border: none;
+  }
+
+  .home-informations .status-apply{
+    display: none;
+  }
+
+  .list-identity .identity .label h6{    
+    font-size:unset;
+  }
+
+  .list-identity .identity .fill{    
+    font-weight: unset;
+    font-size: unset;
+  }  
+
+
+
  }
- .tracking-item .tracking-icon.status-intransit {
-   color:lightblue;
-   font-size: 0.6rem;
- }
- .tracking-item .tracking-icon.status-current {
-   color: lightblue;
-   font-size: 0.6rem;
- }
- @media (min-width: 992px) {
-   .tracking-item {
-     margin-left: 10rem;
-   }
-   .tracking-item .tracking-date {
-     position: absolute;
-     left: -10rem;
-     width: 7.5rem;
-     text-align: right;
-   }
-   .tracking-item .tracking-date span {
-     display: block;
-   }
-   .tracking-item .tracking-content {
-     padding: 0;
-     background-color: transparent;
-   }
-  
-   .tracking-item-pending {
-     margin-left: 10rem;
-   }
-   .tracking-item-pending .tracking-date {
-     position: absolute;
-     left: -10rem;
-     width: 7.5rem;
-     text-align: right;
-   }
-   .tracking-item-pending .tracking-date span {
-     display: block;
-   }
-   .tracking-item-pending .tracking-content {
-     padding: 0;
-     background-color: transparent;
-   }
- }
-  
- .tracking-item .tracking-content {
-   font-weight: 600;
-   font-size: 17px;
- }
-  
- .blinker {
-   border: 7px solid #e9f8ea;
-   animation: blink 1s;
-   animation-iteration-count: infinite;
- }
- @keyframes blink { 50% { border-color:#fff ; }  }
