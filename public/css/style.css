@@ -60,9 +60,16 @@
     color: black;
     margin: 0 4px;
 }
+/* Akhir Maneu */
+
+/* Container */
+.container {
+  min-width: 320px;
+}
+
+/* Akhir Container */
 
 /* Tabel Identitas */
-
 .home-informations .image{
   display: flex;
   justify-content: center;  
@@ -81,7 +88,7 @@
 .home-informations .list-identity .name h2{
   text-align: center;
   margin-bottom: 25px;
-  font-size: 2rem;
+  font-size: 1%;
 }
 
 .home-informations .identity{
@@ -161,9 +168,35 @@
   background: black;
 }
 
-/* Responsive */
+/* Akhir Home User */
+/* ======================================================================================= */
 
-@media (min-width: 768px) { 
+
+/* Profile */
+
+.profile-informations .box-title{
+  width: 100%;
+  border-radius: 10px;
+  background-color: black ;
+}
+
+.profile-informations .name{
+  text-align: center;
+}
+
+.profile-informations .identity h6{
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+
+
+
+
+
+/* Responsive Laptop */ 
+
+@media  (min-width: 980px) { 
   
   /* Navbar */
   .list-menu{
@@ -179,9 +212,19 @@
     display: block;
   }
 
+  /* Akhir Menu */
+
+  /* Container */
+
 
   
   /* Identity */
+
+  .home-informations{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .home-informations .image{      
     margin-bottom: 0;
   }
@@ -212,6 +255,19 @@
     font-size: unset;
   }  
 
+ 
+/* Profile */
+.profile-informations .box-title{
+  width: 30%;
+}
 
+.profile-informations .img-foto img {
+  display: none;
+}
+.profile-informations .name{
+  text-align: left;
+}
 
- }
+}
+
+ /* Responsive Tablet */

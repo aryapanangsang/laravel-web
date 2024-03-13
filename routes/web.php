@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/profile', function(){
+Route::get('/profil', function(){
     return view('profile');
-});
+})->name('profile');
