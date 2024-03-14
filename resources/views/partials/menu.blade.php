@@ -4,7 +4,7 @@
             <a class="nav-link active bg-black" aria-current="page" href="/">Dashboard</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-black" href="{{ route('profile') }}">Profile</a>
+            <a class="nav-link text-black" href="{{ route('show_profile') }}">Profile</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-black" href="#">Tracking CV</a>

@@ -6,6 +6,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <span>{{ Auth::user()->name }}</span>
                 <img src="img/user.jpeg" width="30px" class="rounded-circle m-1 nav-image" alt="user">
                 <div class="list-menu">
                     <ul class="item-list-menu">

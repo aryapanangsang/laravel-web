@@ -19,6 +19,15 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'gender',
+        'alamat',
+        'domisili',
+        'no_hp',
+        'no_hp_darurat',
+        'tinggi_badan',
+        'berat_badan',
         'email',
         'password',
     ];
@@ -42,4 +51,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function experiences()
+    {
+       return $this->hasMany(Experiences::class);
+    }
 }
