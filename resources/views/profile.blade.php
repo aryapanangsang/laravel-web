@@ -105,9 +105,16 @@
         </div>
     </div>
 
-    <div class="container shadow rounded bg-white mt-2">
-        <div class="row profile-informations p-3">
-            @include('partials.experience')
+    <section>
+        <div class="container shadow-sm rounded bg-white mt-2 py-4">
+            <div class="row">
+                <div class="col-sm-12 card">
+                    @include('partials.experience')
+                </div>
+                <div class="col-12 card mt-2">
+                    @include('partials.skill')
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 @endsection

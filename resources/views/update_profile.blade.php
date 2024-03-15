@@ -20,9 +20,20 @@
                             </div>
                             <div class="col-sm-9 fill">
                                 <select name="gender" id="gender" class="form-control">
-                                    <option value="{{ $user->gender }}">---Pilih---</option>
-                                    <option value="L">Laki-Laki</option>
-                                    <option value="P">Perempuan</option>
+                                    <option value="{{ $user->gender }}">
+                                        @if ($user->gender == 'L')
+                                            Laki Laki
+                                        @elseif($user->gender == 'P')
+                                            Perempuan
+                                        @else
+                                            ---Pilih---
+                                        @endif
+                                    </option>
+                                    @if ($user->gender == 'L')
+                                        <option value="P">Perempuan</option>
+                                    @else
+                                        <option value="L">Laki-laki</option>
+                                    @endif
                                 </select>
                             </div>
                         </div>

@@ -31,11 +31,9 @@ class HomeController extends Controller
     }
 
     public function show_profile(){
-        $user = Auth::user();
-        $experiences = Experience::where('user_id', '=' ,$user->id);
+        $user = Auth::user();        
         return view('/profile',[
-            'user' => $user,
-            'experiences' => $experiences
+            'user' => $user,            
         ]);
     }
 
@@ -62,7 +60,7 @@ class HomeController extends Controller
             'email' => $request->email
         ]);
 
-        return Redirect::route('update_profile');
+        return Redirect::route('show_profile');
     }
 
     public function store_experience(Request $request)
@@ -77,5 +75,11 @@ class HomeController extends Controller
         ]);
 
         return Redirect::route('show_profile');
+    }
+
+    public function delete_experience(Experience $experience)
+    {
+        $experience->delete();
+        return Redirect::back()->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

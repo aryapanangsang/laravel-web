@@ -1,4 +1,3 @@
-    <div class="col-sm-12 py-4 card">
         <div class="pengalaman-title">
             <div class="box-title p-1 text-white text-center">
                 <h3 class="font-bold fs-6">Pengalaman</h3>
@@ -6,25 +5,33 @@
         </div>
         <div class="pengalaman p-2">
             <div class="item-pengalaman">
-                @foreach ($experiences as $experience)
+                @foreach ($user->experiences as $data)
                     <div class="row position">
                         <div class="col-sm-12 label">
-                            <h6>{{ $experience->bagian }}</h6>
+                            <h6>{{ $data->bagian }}</h6>
                         </div>
                     </div>
                     <div class="row job-detail">
                         <div class="col-sm-6 fill">
-                            <span>{{ $experience->perusahaan }}</span>
+                            <span>{{ $data->perusahaan }}</span>
                         </div>
-                        <div class="col-sm-6 fill">
-                            <span>-</span>
+                        <div class="col-sm-5 fill">
+                            <span>{{ $data->id }}</span>
+                        </div>
+                        <div class="col-sm-1">
+                            <form action="{{ route('hapus_experience', $data->id) }}" method="post">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-danger">X</button>
+                            </form>
                         </div>
                     </div>
-                @endforeach
             </div>
             <hr>
+            @endforeach
         </div>
-        <div class="col-sm-12 d-flex justify-content-end">
+        <div class="col-sm-12 d-flex justify-content-end mt-2
+        ">
             <!-- Modal trigger button -->
             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalId">
                 Tambah
@@ -74,4 +81,3 @@
                 );
             </script>
         </div>
-    </div>

@@ -26,6 +26,7 @@ Route::get('/profile', [HomeController::class, 'show_profile'])->name('show_prof
 Route::get('/update_profile', [HomeController::class, 'update_profile'])->name('update_profile');
 Route::patch('/update_profile', [HomeController::class, 'store_profile'])->name('store_profile');
 Route::post('/experience', [HomeController::class, 'store_experience'])->name('store_experince');
+Route::delete('/experience/delete/{experience}', [HomeController::class, 'delete_experience'])->name('hapus_experience');
 
 
 Auth::routes();
