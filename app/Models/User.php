@@ -19,6 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'no_register',
         'name',
         'tempat_lahir',
         'tanggal_lahir',
@@ -29,6 +30,8 @@ class User extends Authenticatable
         'no_hp_darurat',
         'tinggi_badan',
         'berat_badan',
+        'kantor_tujuan',
+        'role',
         'email',
         'password',
     ];
@@ -56,5 +59,10 @@ class User extends Authenticatable
     public function experiences()
     {
        return $this->hasMany(Experience::class);
+    }
+
+    public function cvs()
+    {
+        return $this->belongTo(Cv::class);      
     }
 }

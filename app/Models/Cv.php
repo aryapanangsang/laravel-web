@@ -5,20 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Experience extends Model
+class Cv extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'bagian',
-        'perusahaan',
-        'durasi_kontrak'
-
+        'path' 
     ];
 
-    public function users()
-    {
-       return $this->belongsTo(Users::class);
+    public function users(){
+        return this->hasOne(User::class);
     }
 }

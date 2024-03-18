@@ -1,37 +1,36 @@
         <div class="pengalaman-title">
-            <div class="box-title p-1 text-white text-center">
+            <div class="box-title p-1 text-center">
                 <h3 class="font-bold fs-6">Pengalaman</h3>
             </div>
         </div>
-        <div class="pengalaman p-2">
-            <div class="item-pengalaman">
-                @foreach ($user->experiences as $data)
-                    <div class="row position">
-                        <div class="col-sm-12 label">
-                            <h6>{{ $data->bagian }}</h6>
-                        </div>
+        <div class="item-pengalaman">
+            @foreach ($user->experiences as $data)
+                <div class="row position">
+                    <div class="col-sm-12 label">
+                        <h6>{{ $data->bagian }}</h6>
                     </div>
-                    <div class="row job-detail">
-                        <div class="col-sm-6 fill">
-                            <span>{{ $data->perusahaan }}</span>
-                        </div>
-                        <div class="col-sm-5 fill">
-                            <span>{{ $data->id }}</span>
-                        </div>
-                        <div class="col-sm-1">
-                            <form action="{{ route('hapus_experience', $data->id) }}" method="post">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-danger">X</button>
-                            </form>
-                        </div>
+                </div>
+                <div class="row job-detail">
+                    <div class="col-sm-6 fill">
+                        <span>{{ $data->perusahaan }}</span>
                     </div>
-            </div>
-            <hr>
+                    <div class="col-sm-5 fill">
+                        <span>{{ $data->durasi_kontrak }} Bulan</span>
+                    </div>
+                    <div class="col-sm-1">
+                        <form action="{{ route('hapus_experience', $data->id) }}" method="post">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" class="btn btn-danger">X</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
             @endforeach
         </div>
-        <div class="col-sm-12 d-flex justify-content-end mt-2
-        ">
+
+
+        <div class="col-sm-12 d-flex justify-content-end mt-2 px-3">
             <!-- Modal trigger button -->
             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#modalId">
                 Tambah
@@ -58,9 +57,8 @@
                                 <hr>
                                 <input type="text" name="bagian" class="form-control" placeholder="Bagian/Posisi">
                                 <hr>
-                                <input type="date" name="tgl_join" class="form-control">
-                                <hr>
-                                <input type="date" name="tgl_cut" class="form-control">
+                                <input type="number" name="durasi_kontrak" class="form-control"
+                                    placeholder="Durasi Kontrak (Bulan)">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">

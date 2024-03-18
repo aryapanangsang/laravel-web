@@ -16,7 +16,7 @@
                             <h6>No. Regist</h6>
                         </div>
                         <div class="col-sm-9 fill">
-                            <span>12345678</span>
+                            <span>{{ $users->no_register }}</span>
                         </div>
                     </div>
                     <div class="row">
@@ -24,7 +24,7 @@
                             <h6>Tanggal Daftar</h6>
                         </div>
                         <div class="col-sm-9 fill">
-                            <span> 14 Januari 2024</span>
+                            <span>{{ $tgl_daftar }}</span>
                         </div>
                     </div>
                     <div class="row">
@@ -32,7 +32,7 @@
                             <h6>Kantor Tujuan</h6>
                         </div>
                         <div class="col-sm-9 fill">
-                            <span> Cikarang</span>
+                            <span> {{ $users->kantor_tujuan }}</span>
                         </div>
                     </div>
                 </div>

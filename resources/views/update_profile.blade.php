@@ -20,19 +20,16 @@
                             </div>
                             <div class="col-sm-9 fill">
                                 <select name="gender" id="gender" class="form-control">
-                                    <option value="{{ $user->gender }}">
-                                        @if ($user->gender == 'L')
-                                            Laki Laki
-                                        @elseif($user->gender == 'P')
-                                            Perempuan
-                                        @else
-                                            ---Pilih---
-                                        @endif
-                                    </option>
-                                    @if ($user->gender == 'L')
+                                    @if ($user->gender == '')
+                                        <option value="">--Pilih--</option>
+                                        <option value="L">Laki-laki</option>
+                                        <option value="P">Perempuan</option>
+                                    @elseif($user->gender == 'L')
+                                        <option value="{{ $user->gender }}">Laki-laki</option>
                                         <option value="P">Perempuan</option>
                                     @else
-                                        <option value="L">Laki-laki</option>
+                                        <option value="{{ $user->gender }}">Perempuan</option>
+                                        <option value="L"> Laki-laki</option>
                                     @endif
                                 </select>
                             </div>
@@ -121,6 +118,23 @@
                             <div class="col-sm-9 fill">
                                 <input type="number" name="berat_badan" class="form-control"
                                     value="{{ $user->berat_badan }}">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3 label">
+                                <h6>Kantor Tujuan</h6>
+                            </div>
+                            <div class="col-sm-9 fill">
+                                <select name="kantor_tujuan" id="kantor_tujuan" class="form-control">
+                                    @if ($user->kantor_tujuan == 'Cikarang')
+                                        <option value="Cikarang">Kantor Pusat Cikarang</option>
+                                        <option value="Purwakarta">Kantor Cabang Purwakarta</option>
+                                    @else
+                                        <option value="Purwakarta">Kantor Cabang Purwakarta</option>
+                                        <option value="Cikarang">Kantor Pusat Cikarang</option>
+                                    @endif
+                                </select>
                             </div>
                         </div>
                     </div>

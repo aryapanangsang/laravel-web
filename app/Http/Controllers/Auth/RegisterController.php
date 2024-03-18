@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'kantor_tujuan' => ['required']
         ]);
     }
 
@@ -63,10 +64,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        // Ambil nomor urut terakhir dari database
+        $lastNumber = User::latest()->value('id');
+        
+        // Jika tidak ada nomor urut sebelumnya, mulai dari 1
+        if (!$lastNumber) {
+            $nextNumber = 1;
+        } else {
+            // Ambil nomor urut terakhir, lalu tambahkan 1
+            $nextNumber = $lastNumber + 1;
+        }
+        
+        // Buat nomor urut baru dengan format yang diinginkan
+        $newNumber = 'REG-' . date('Ymd') . '-' . sprintf('%04d', $nextNumber);                
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'no_register' => $newNumber,
+            'kantor_tujuan' => $data['kantor_tujuan']
         ]);
     }
 }
