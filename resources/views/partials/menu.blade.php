@@ -7,7 +7,7 @@
             <a class="nav-link text-black" href="{{ route('show_profile') }}">Profile</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-black" href="#">Tracking CV</a>
+            <a class="nav-link text-black" href="{{ route('show_tracking') }}">Tracking CV</a>
         </li>
         <li class="nav-item">
             <a class="nav-link text-black">Lowongan</a>

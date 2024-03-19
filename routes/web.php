@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController; 
+use App\Http\Controllers\TrackingController; 
 
 
 
@@ -24,7 +25,7 @@ Route::patch('/update_profile', [HomeController::class, 'store_profile'])->name(
 Route::post('/experience', [HomeController::class, 'store_experience'])->name('store_experince');
 Route::delete('/experience/delete/{experience}', [HomeController::class, 'delete_experience'])->name('hapus_experience');
 Route::post('/profile/cv', [HomeController::class, 'store_cv'])->name('store_cv');
-
+Route::get('/tracking', [trackingController::class, 'show_tracking'])->name('show_tracking');
 
 Auth::routes();
 

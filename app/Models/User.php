@@ -63,6 +63,6 @@ class User extends Authenticatable
 
     public function cvs()
     {
-        return $this->belongTo(Cv::class);      
+        return $this->hasOne(Cv::class);      
     }
 }

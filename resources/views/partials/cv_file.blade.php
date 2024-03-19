@@ -3,10 +3,14 @@
 </div>
 <div class="row p-4 max-w-max d-flex  justify-content-center">
     <div class="col-sm-8">
-        <a href="#">CV-{{ $user->name }}</a>
+        <a href="{{ url('storage/', $user->cvs->path) }}">CV-{{ $user->name }}</a>
     </div>
     <div class="col-sm-3 ">
-        <a href="" class="btn btn-danger">x</a>
+        <form action="" method="post">
+            @method('delete')
+            @csrf
+            <button class="btn btn-danger btn-sm" type="submit">x</button>
+        </form>
     </div>
 </div>
 <!-- Button trigger modal -->
