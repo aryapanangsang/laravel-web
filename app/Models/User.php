@@ -65,4 +65,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(Cv::class);      
     }
+
+    public function referensis()
+    {
+        return $this->hasOne(Referensi::class);
+    }
 }

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController; 
 use App\Http\Controllers\TrackingController; 
+use App\Http\Controllers\ExperienceController; 
+use App\Http\Controllers\CvController; 
+use App\Http\Controllers\ReferensiController; 
 
 
 
@@ -22,10 +25,12 @@ Route::get('/', [HomeController::class, 'index'])->name('home_profile');
 Route::get('/profile', [HomeController::class, 'show_profile'])->name('show_profile');
 Route::get('/update_profile', [HomeController::class, 'update_profile'])->name('update_profile');
 Route::patch('/update_profile', [HomeController::class, 'store_profile'])->name('store_profile');
-Route::post('/experience', [HomeController::class, 'store_experience'])->name('store_experince');
-Route::delete('/experience/delete/{experience}', [HomeController::class, 'delete_experience'])->name('hapus_experience');
-Route::post('/profile/cv', [HomeController::class, 'store_cv'])->name('store_cv');
+Route::post('/experience', [ExperienceController::class, 'store_experience'])->name('store_experince');
+Route::delete('/experience/delete/{experience}', [ExperienceController::class, 'delete_experience'])->name('hapus_experience');
+Route::post('/cv', [CvController::class, 'store_cv'])->name('store_cv');
+Route::delete('/cv/delete/{cv}', [CvController::class, 'delete_cv'])->name('delete_cv');
 Route::get('/tracking', [trackingController::class, 'show_tracking'])->name('show_tracking');
+Route::post('/referensi', [ReferensiController::class, 'store_referensi'])->name('store_referensi');
 
 Auth::routes();
 

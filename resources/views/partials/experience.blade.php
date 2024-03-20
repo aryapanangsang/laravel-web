@@ -21,7 +21,7 @@
                         <form action="{{ route('hapus_experience', $data->id) }}" method="post">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn btn-danger">X</button>
+                            <button type="submit" class="btn btn-danger btn-sm">x</button>
                         </form>
                     </div>
                 </div>

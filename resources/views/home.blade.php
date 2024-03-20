@@ -3,12 +3,12 @@
 @section('content')
     <div class="container shadow rounded bg-white">
         <div class="row home-informations p-3 justify-content-evenly ">
-            <div class="col-sm-3 image">
-                <img src="img/user1.jpg" alt="image" width="220px">
+            <div class="col-sm-3 foto d-flex justify-content-center align-items-center">
+                <img src="img/user.jpeg" alt="image" width="220px" class="rounded-circle ">
             </div>
             <div class="col-sm-6 align-self-center list-identity ">
-                <div class="name">
-                    <h2 class="font-bold ">Juan Adam's</h2>
+                <div class="name mt-2">
+                    <h2 class="font-bold text-black">Juan Adam's</h2>
                 </div>
                 <div class="identity">
                     <div class="row">

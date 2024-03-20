@@ -24,4 +24,11 @@
         </div>
     </div>
     {{-- Akhir CV --}}
+
+    {{-- Referensi --}}
+    <div class="container shadow rounded bg-whie p-4 mt-2">
+        <div class="card referensi p-4 d-flex justify-content-center">
+            @include('partials.referensi')
+        </div>
+    </div>
 @endsection

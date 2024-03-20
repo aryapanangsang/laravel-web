@@ -1,22 +1,33 @@
 <div class="title-cv">
     <h3 class="font-bold fs-6 text-center">CV / Daftar Riwayat Hidup</h3>
 </div>
-<div class="row p-4 max-w-max d-flex  justify-content-center">
-    <div class="col-sm-8">
-        <a href="{{ url('storage/', $user->cvs->path) }}">CV-{{ $user->name }}</a>
-    </div>
-    <div class="col-sm-3 ">
-        <form action="" method="post">
-            @method('delete')
-            @csrf
-            <button class="btn btn-danger btn-sm" type="submit">x</button>
-        </form>
-    </div>
+<div class="row p-4 max-w-max d-flex justify-content-center align-items-center">
+    @if ($cv)
+        <div class="col-sm-8">
+            <a href="{{ url('storage/', $user->cvs->path) }}">CV-{{ $user->name }}</a>
+        </div>
+        <div class="col-sm-4 text-end">
+            <form action="{{ route('delete_cv', $user->id) }}" method="post">
+                @method('delete')
+                @csrf
+                <button class="btn btn-danger btn-sm" type="submit">x</button>
+            </form>
+        </div>
+    @else
+    @endif
 </div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Upload CV
-</button>
+
+@if ($cv)
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Update CV
+    </button>
+@else
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Upload CV
+    </button>
+@endif
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"

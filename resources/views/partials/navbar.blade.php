@@ -14,9 +14,9 @@
                 <img src="img/user.jpeg" width="30px" class="rounded-circle m-1 nav-image" alt="user">
                 <div class="list-menu">
                     <ul class="item-list-menu">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <li><a href="#">Tracking CV</a></li>
+                        <li><a href="/">Dashboard</a></li>
+                        <li><a href="{{ route('show_profile') }}">Profile</a></li>
+                        <li><a href="{{ route('show_tracking') }}">Tracking CV</a></li>
                         <li><a href="#">Lowongan</a></li>
                         <li><a href="#">Akun</a></li>
                     </ul>

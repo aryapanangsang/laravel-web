@@ -41,11 +41,13 @@ class HomeController extends Controller
     public function show_profile(){
         $user = Auth::user();    
         $tgl_daftar = Carbon::parse($user->created_at)->formatLocalized('%d %B %Y');    
-        $tgl_lahir = Carbon::parse($user->tanggal_lahir)->formatLocalized('%d %B %Y');          
+        $tgl_lahir = Carbon::parse($user->tanggal_lahir)->formatLocalized('%d %B %Y');  
+        $cv = Cv::where('user_id', $user->id)->first();        
         return view('/profile',[
             'user' => $user,    
             'tgl_daftar' => $tgl_daftar,
-            'tgl_lahir' => $tgl_lahir,                 
+            'tgl_lahir' => $tgl_lahir,         
+            'cv' => $cv
         ]);
     }
 
@@ -75,50 +77,5 @@ class HomeController extends Controller
 
         return Redirect::route('show_profile');
     }
-
-    public function store_experience(Request $request)
-    {
-        $request->validate([
-            'perusahaan' => ['required'],
-            'bagian' => ['required'],
-            'durasi_kontrak' => ['required']
-        ]);
-        
-        $user = Auth::user()->id;
-        Experience::create([
-            'user_id' => $user,
-            'perusahaan' =>$request->perusahaan,
-            'bagian' => $request->bagian,
-            'durasi_kontrak' => $request->durasi_kontrak,
-        ]);
-
-        return Redirect::route('show_profile');
-    }
-
-    public function delete_experience(Experience $experience)
-    {
-        $experience->delete();
-        return Redirect::back()->with(['success' => 'Data Berhasil Dihapus!']);
-    }
-
-    public function store_cv(Request $request)
-    {
-        $request->validate([
-            'file' => ['mimes:pdf']
-        ]);
-
-        $user = Auth::user();
-        $name = $user->name;
-        $file = $request->file('file');
-        $path = time() . '-' . $name . '.' . $file->getClientOriginalExtension();
-        Storage::disk('local')->put('public/'. $path, file_get_contents($file));
-
-        
-        Cv::create([
-            'user_id' => $user->id,
-            'path' => $path
-        ]);
-
-        return Redirect::route('show_profile');
-    }
+    
 }
