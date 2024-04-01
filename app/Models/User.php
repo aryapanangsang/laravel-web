@@ -33,6 +33,7 @@ class User extends Authenticatable
         'kantor_tujuan',
         'role',
         'email',
+        'path',
         'password',
     ];
 

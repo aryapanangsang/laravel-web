@@ -9,11 +9,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>{{ $user->referensis->name }}</td>
-                    <td>{{ $user->referensis->no_hp }}</td>
-                    <td>{{ $user->referensis->keterangan }}</td>
-                </tr>
+                @if ($reff)
+                    <tr>
+                        <td>{{ $user->referensis->name }}</td>
+                        <td>{{ $user->referensis->no_hp }}</td>
+                        <td>{{ $user->referensis->keterangan }}</td>
+                    </tr>
+                @else
+                @endif
             </tbody>
         </table>
 

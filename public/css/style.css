@@ -96,6 +96,12 @@
   padding: 20px
 }
 
+.profile-image:hover{
+  content: url('../img//camera-ico.png');
+  cursor: pointer;
+  border: 1px solid black;
+}
+
 .list-identity .identity .label h6{  
   font-weight: 500;
   font-size: 1.2rem;

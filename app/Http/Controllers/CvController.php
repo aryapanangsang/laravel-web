@@ -11,7 +11,7 @@ class CvController extends Controller
     public function store_cv(Request $request)
     {
         $request->validate([
-            'file' => ['mimes:pdf']
+            'file' => ['mimes:pdf|max:2048']
         ]);
 
         $user = Auth::user();

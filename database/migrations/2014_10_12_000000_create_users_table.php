@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('berat_badan')->nullable();
             $table->string('kantor_tujuan')->nullable();
             $table->string('email')->unique();
+            $table->string('path')->nullable();
             $table->string('role')->default('Member');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

@@ -12,5 +12,8 @@
         <li class="nav-item">
             <a class="nav-link text-black">Lowongan</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link text-black" href="{{ route('show_pengaturan') }}">Pengaturan</a>
+        </li>
     </ul>
 </div>
